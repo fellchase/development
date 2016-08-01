@@ -1,0 +1,12 @@
+#!/bin/bash
+
+url=ouo.io/Ta8X99	# Link we're going to visit
+loop=100		# How many times do we visit url
+
+firefox $url		# Initialize web browser
+sleep 15		# Wait for complete execution
+
+for ((i = 0 ; i < loop ; i++ ))
+do 
+	
+done
