@@ -10,12 +10,12 @@
 ## #SigLevel = Never
 ## #Server = https://blackarch.pr0s3c.nl/blackarch/blackarch/os/$arch
 
-echo Backing up pacman config...
+echo "Backing up pacman config..."
 sudo cp /etc/pacman.conf /etc/pacman.conf.bak
 sed -i "s/sudo cp/#sudo cp/" blackarch.sh
-sed -i "s/echo Backing up pacman config.../#echo Backing up pacman config.../" blackarch.sh
+sed -e "s/\<echo \"Backing up pacman config...\"\>//g"
 sudo chmod 000 /etc/pacman.conf.bak
-read -p "What package? " pkg
+read -p "What package? " pkg	## Reads package into variable
 echo "Updating system..."
 yes j | sudo pacman -Syyu &>/dev/null
 sudo sed -i "s/\#\[blackarch\]/\[blackarch\]/" /etc/pacman.conf
