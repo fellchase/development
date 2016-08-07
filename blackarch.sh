@@ -7,7 +7,7 @@
 
 read -p "What package? " pkg	## Reads package into variable
 echo "Updating system..."
-sudo pacman -Syyu &>/dev/null
+yes j | sudo pacman -Syyu &>/dev/null
 sudo sed -i "s/\#\[blackarch\]/\[blackarch\]/" /etc/pacman.conf
 sudo sed -i "s/#SigLevel = Never/SigLevel = Never/" /etc/pacman.conf
 sudo sed -i "s/#Server = https:\/\/blackarch.pr0s3c.nl\/blackarch\/blackarch\/os\/\$arch/Server = https:\/\/blackarch.pr0s3c.nl\/blackarch\/blackarch\/os\/\$arch/" /etc/pacman.conf
