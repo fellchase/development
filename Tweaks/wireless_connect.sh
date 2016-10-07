@@ -12,7 +12,7 @@ then
 else
 	echo "Please verify the state of '/sys/class/net/wlo1/operstate'."
 fi
-sudo ifconfig wlo1 &>/dev/null
+# sudo ifconfig wlo1 &>/dev/null
 read -p "What's the hotspot's name? " hotspot
 echo "Attempting to connect to $hotspot."
 sudo iwconfig wlo1 essid $hotspot
