@@ -10,7 +10,11 @@ xdotool click 1
 # Start VIM
 xdotool type "vim"
 xdotool key Return
+# Wait a sec
+sleep 1
 xdotool type "i"
+# Wait another sec
+sleep 1
 
 # Start for loop.
 for num in {1..50}
